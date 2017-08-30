@@ -15,8 +15,11 @@
 		C0D8A3CF1F571A0200A204C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A3CD1F571A0200A204C7 /* LaunchScreen.storyboard */; };
 		C0D8A3DA1F571A0200A204C7 /* AssignmentOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3D91F571A0200A204C7 /* AssignmentOneTests.m */; };
 		C0D8A3E51F571A0200A204C7 /* AssignmentOneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3E41F571A0200A204C7 /* AssignmentOneUITests.m */; };
-		C0D8A3F31F571AC600A204C7 /* GabrielStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A3F21F571AC600A204C7 /* GabrielStoryBoard.storyboard */; };
-		C0D8A3F51F571AE100A204C7 /* PhadateStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A3F41F571AE100A204C7 /* PhadateStoryBoard.storyboard */; };
+		C0D8A3F81F5723F300A204C7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3F71F5723F300A204C7 /* SettingsViewController.m */; };
+		C0D8A3FB1F57243800A204C7 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3FA1F57243800A204C7 /* TableViewController.m */; };
+		C0D8A3FE1F57249F00A204C7 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3FD1F57249F00A204C7 /* CollectionViewController.m */; };
+		C0D8A4011F57252F00A204C7 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A3FF1F57252F00A204C7 /* CollectionView.storyboard */; };
+		C0D8A4031F57254700A204C7 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A4021F57254700A204C7 /* Settings.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +56,14 @@
 		C0D8A3E01F571A0200A204C7 /* AssignmentOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8A3E41F571A0200A204C7 /* AssignmentOneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssignmentOneUITests.m; sourceTree = "<group>"; };
 		C0D8A3E61F571A0200A204C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0D8A3F21F571AC600A204C7 /* GabrielStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GabrielStoryBoard.storyboard; path = ../GabrielStoryBoard.storyboard; sourceTree = "<group>"; };
-		C0D8A3F41F571AE100A204C7 /* PhadateStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PhadateStoryBoard.storyboard; path = ../PhadateStoryBoard.storyboard; sourceTree = "<group>"; };
+		C0D8A3F61F5723F300A204C7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C0D8A3F71F5723F300A204C7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C0D8A3F91F57243800A204C7 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		C0D8A3FA1F57243800A204C7 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		C0D8A3FC1F57249F00A204C7 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewController.h; path = ../CollectionViewController.h; sourceTree = "<group>"; };
+		C0D8A3FD1F57249F00A204C7 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewController.m; path = ../CollectionViewController.m; sourceTree = "<group>"; };
+		C0D8A4001F57252F00A204C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CollectionView.storyboard; sourceTree = "<group>"; };
+		C0D8A4021F57254700A204C7 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +118,15 @@
 				C0D8A3C31F571A0200A204C7 /* AppDelegate.m */,
 				C0D8A3C51F571A0200A204C7 /* ViewController.h */,
 				C0D8A3C61F571A0200A204C7 /* ViewController.m */,
-				C0D8A3F41F571AE100A204C7 /* PhadateStoryBoard.storyboard */,
-				C0D8A3F21F571AC600A204C7 /* GabrielStoryBoard.storyboard */,
 				C0D8A3C81F571A0200A204C7 /* Main.storyboard */,
+				C0D8A4021F57254700A204C7 /* Settings.storyboard */,
+				C0D8A3FF1F57252F00A204C7 /* CollectionView.storyboard */,
+				C0D8A3FC1F57249F00A204C7 /* CollectionViewController.h */,
+				C0D8A3FD1F57249F00A204C7 /* CollectionViewController.m */,
+				C0D8A3F91F57243800A204C7 /* TableViewController.h */,
+				C0D8A3FA1F57243800A204C7 /* TableViewController.m */,
+				C0D8A3F61F5723F300A204C7 /* SettingsViewController.h */,
+				C0D8A3F71F5723F300A204C7 /* SettingsViewController.m */,
 				C0D8A3CB1F571A0200A204C7 /* Assets.xcassets */,
 				C0D8A3CD1F571A0200A204C7 /* LaunchScreen.storyboard */,
 				C0D8A3D01F571A0200A204C7 /* Info.plist */,
@@ -256,10 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0D8A3CF1F571A0200A204C7 /* LaunchScreen.storyboard in Resources */,
-				C0D8A3F51F571AE100A204C7 /* PhadateStoryBoard.storyboard in Resources */,
 				C0D8A3CC1F571A0200A204C7 /* Assets.xcassets in Resources */,
-				C0D8A3F31F571AC600A204C7 /* GabrielStoryBoard.storyboard in Resources */,
+				C0D8A4011F57252F00A204C7 /* CollectionView.storyboard in Resources */,
 				C0D8A3CA1F571A0200A204C7 /* Main.storyboard in Resources */,
+				C0D8A4031F57254700A204C7 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +301,10 @@
 			files = (
 				C0D8A3C71F571A0200A204C7 /* ViewController.m in Sources */,
 				C0D8A3C41F571A0200A204C7 /* AppDelegate.m in Sources */,
+				C0D8A3FE1F57249F00A204C7 /* CollectionViewController.m in Sources */,
 				C0D8A3C11F571A0200A204C7 /* main.m in Sources */,
+				C0D8A3FB1F57243800A204C7 /* TableViewController.m in Sources */,
+				C0D8A3F81F5723F300A204C7 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +354,14 @@
 				C0D8A3CE1F571A0200A204C7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C0D8A3FF1F57252F00A204C7 /* CollectionView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0D8A4001F57252F00A204C7 /* Base */,
+			);
+			name = CollectionView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
