@@ -15,6 +15,8 @@
 		C0D8A3CF1F571A0200A204C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A3CD1F571A0200A204C7 /* LaunchScreen.storyboard */; };
 		C0D8A3DA1F571A0200A204C7 /* AssignmentOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3D91F571A0200A204C7 /* AssignmentOneTests.m */; };
 		C0D8A3E51F571A0200A204C7 /* AssignmentOneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3E41F571A0200A204C7 /* AssignmentOneUITests.m */; };
+		C0D8A3F31F571AC600A204C7 /* GabrielStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A3F21F571AC600A204C7 /* GabrielStoryBoard.storyboard */; };
+		C0D8A3F51F571AE100A204C7 /* PhadateStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8A3F41F571AE100A204C7 /* PhadateStoryBoard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		C0D8A3E01F571A0200A204C7 /* AssignmentOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8A3E41F571A0200A204C7 /* AssignmentOneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssignmentOneUITests.m; sourceTree = "<group>"; };
 		C0D8A3E61F571A0200A204C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0D8A3F21F571AC600A204C7 /* GabrielStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GabrielStoryBoard.storyboard; path = ../GabrielStoryBoard.storyboard; sourceTree = "<group>"; };
+		C0D8A3F41F571AE100A204C7 /* PhadateStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PhadateStoryBoard.storyboard; path = ../PhadateStoryBoard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				C0D8A3C31F571A0200A204C7 /* AppDelegate.m */,
 				C0D8A3C51F571A0200A204C7 /* ViewController.h */,
 				C0D8A3C61F571A0200A204C7 /* ViewController.m */,
+				C0D8A3F41F571AE100A204C7 /* PhadateStoryBoard.storyboard */,
+				C0D8A3F21F571AC600A204C7 /* GabrielStoryBoard.storyboard */,
 				C0D8A3C81F571A0200A204C7 /* Main.storyboard */,
 				C0D8A3CB1F571A0200A204C7 /* Assets.xcassets */,
 				C0D8A3CD1F571A0200A204C7 /* LaunchScreen.storyboard */,
@@ -250,7 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0D8A3CF1F571A0200A204C7 /* LaunchScreen.storyboard in Resources */,
+				C0D8A3F51F571AE100A204C7 /* PhadateStoryBoard.storyboard in Resources */,
 				C0D8A3CC1F571A0200A204C7 /* Assets.xcassets in Resources */,
+				C0D8A3F31F571AC600A204C7 /* GabrielStoryBoard.storyboard in Resources */,
 				C0D8A3CA1F571A0200A204C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
