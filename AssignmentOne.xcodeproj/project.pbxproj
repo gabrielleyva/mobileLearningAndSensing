@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0D4C3FE1F5DD20E0013AFDF /* SettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D4C3FD1F5DD20E0013AFDF /* SettingsViewModel.m */; };
 		C0D8A3C11F571A0200A204C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C01F571A0200A204C7 /* main.m */; };
 		C0D8A3C41F571A0200A204C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C31F571A0200A204C7 /* AppDelegate.m */; };
 		C0D8A3C71F571A0200A204C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C61F571A0200A204C7 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0D4C3FC1F5DD20E0013AFDF /* SettingsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewModel.h; sourceTree = "<group>"; };
+		C0D4C3FD1F5DD20E0013AFDF /* SettingsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewModel.m; sourceTree = "<group>"; };
 		C0D8A3BC1F571A0200A204C7 /* AssignmentOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8A3C01F571A0200A204C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0D8A3C21F571A0200A204C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				C0D8A3FA1F57243800A204C7 /* TableViewController.m */,
 				C0D8A3F61F5723F300A204C7 /* SettingsViewController.h */,
 				C0D8A3F71F5723F300A204C7 /* SettingsViewController.m */,
+				C0D4C3FC1F5DD20E0013AFDF /* SettingsViewModel.h */,
+				C0D4C3FD1F5DD20E0013AFDF /* SettingsViewModel.m */,
 				C0D8A3CB1F571A0200A204C7 /* Assets.xcassets */,
 				C0D8A3CD1F571A0200A204C7 /* LaunchScreen.storyboard */,
 				C0D8A3D01F571A0200A204C7 /* Info.plist */,
@@ -302,6 +307,7 @@
 				C0D8A3C71F571A0200A204C7 /* ViewController.m in Sources */,
 				C0D8A3C41F571A0200A204C7 /* AppDelegate.m in Sources */,
 				C0D8A3FE1F57249F00A204C7 /* CollectionViewController.m in Sources */,
+				C0D4C3FE1F5DD20E0013AFDF /* SettingsViewModel.m in Sources */,
 				C0D8A3C11F571A0200A204C7 /* main.m in Sources */,
 				C0D8A3FB1F57243800A204C7 /* TableViewController.m in Sources */,
 				C0D8A3F81F5723F300A204C7 /* SettingsViewController.m in Sources */,
@@ -550,6 +556,7 @@
 				C0D8A3EB1F571A0200A204C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0D8A3EC1F571A0200A204C7 /* Build configuration list for PBXNativeTarget "AssignmentOneTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +565,7 @@
 				C0D8A3EE1F571A0200A204C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0D8A3EF1F571A0200A204C7 /* Build configuration list for PBXNativeTarget "AssignmentOneUITests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +574,7 @@
 				C0D8A3F11F571A0200A204C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
