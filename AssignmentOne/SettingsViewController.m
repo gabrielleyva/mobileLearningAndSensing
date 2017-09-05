@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "SettingsViewModel.h"
 
 @interface SettingsViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *colorLabel;
@@ -15,8 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerOnOffLabel;
 @property (weak, nonatomic) IBOutlet UITextField *timerTextField;
 @property (strong, nonatomic) UIPickerView *pickerView;
-@property (weak, nonatomic) NSMutableArray *hours;
-@property (weak, nonatomic) NSMutableArray *minutes;
+@property (strong, nonatomic) SettingsViewModel *settingModel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end
 
@@ -25,8 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-     [self preparePickerArrays];
+    
     [self preparePickerView];
+    [self prepareTimerTextField];
+    [self prepareSaveButton];
     
 }
 
@@ -39,38 +43,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(SettingsViewModel*)myImageModel{
+    
+    if(!_settingModel)
+        _settingModel =[SettingsViewModel sharedInstance];
+    
+    return _settingModel;
+}
+
 - (void)preparePickerView{
     self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
-    [self.pickerView setDataSource: self];
-    [self.pickerView setDelegate: self];
+    self.pickerView.delegate = self;
+    self.pickerView.dataSource = self;
     self.pickerView.showsSelectionIndicator = YES;
     self.timerTextField.inputView = self.pickerView;
 }
 
-- (void) preparePickerArrays{
-    NSMutableArray * tempHours = [NSMutableArray array];
-    NSMutableArray * tempMinutes = [NSMutableArray array];
-    
-    for (int i = 0; i < 24; i++) {
-        [tempHours addObject:[NSNumber numberWithInt:i]];
-        NSLog(@"%@", [tempHours objectAtIndex:i]);
-    }
-    for (int i = 0; i < 59; i++) {
-        [tempMinutes addObject:[NSNumber numberWithInt:i]];
-    }
-    
-    _hours = tempHours;
-    _minutes= tempMinutes;
-    
+- (void)prepareTimerTextField{
+    self.timerTextField.allowsEditingTextAttributes = NO;
 }
 
-
+- (void)prepareSaveButton{
+    self.saveButton.layer.borderWidth = 1;
+    self.saveButton.layer.borderColor = [UIColor greenColor].CGColor;
+    self.saveButton.tintColor = [UIColor greenColor];
+}
 
 - (IBAction)sliderMoved:(UISlider *)sender {
     
     UIColor *themeColor = [UIColor colorWithHue:self.slider.value saturation:1.f brightness:1.f alpha:1.f];
     
     self.colorLabel.textColor = themeColor;
+    self.settingModel.themeColor = themeColor;
 }
 
 - (IBAction)stepperUsed:(UIStepper *)sender {
@@ -91,32 +95,29 @@
     [self.timerTextField resignFirstResponder];
 }
 
+- (IBAction)saveButtonPressed:(id)sender {
+}
 #pragma mark - PcikerView
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
-    return 2;
+    return 1;
 }
 
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    if(component == 0 && pickerView == self.pickerView){
-        return [self.hours objectAtIndex:row] ;
-    } else if (component == 1 && pickerView == self.pickerView) {
-        return [self.minutes objectAtIndex:row];
-    }
     
-    return @"";
+    NSLog(@"Called 2");
+    return @"Hello";
 
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    if(component == 0 && pickerView == self.pickerView){
-        return [self.hours count];
-    } else if (component == 1 && pickerView == self.pickerView) {
-        return [self.minutes count];
-    }
+    NSLog(@"Called");
+    
+    return [self.settingModel.hours count];
+}
 
-    return 0;
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
 }
 /*
 #pragma mark - Navigation
