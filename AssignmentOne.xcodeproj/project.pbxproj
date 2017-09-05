@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4E2D9A1F5F22CF008AEB01 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E2D991F5F22CF008AEB01 /* CollectionViewCell.m */; };
+		9BBDEDE61F5DF19A0053D5CF /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDEDE51F5DF19A0053D5CF /* ImageModel.m */; };
 		C0D8A3C11F571A0200A204C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C01F571A0200A204C7 /* main.m */; };
 		C0D8A3C41F571A0200A204C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C31F571A0200A204C7 /* AppDelegate.m */; };
 		C0D8A3C71F571A0200A204C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C61F571A0200A204C7 /* ViewController.m */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B4E2D981F5F22CF008AEB01 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		9B4E2D991F5F22CF008AEB01 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		9BBDEDE41F5DF19A0053D5CF /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		9BBDEDE51F5DF19A0053D5CF /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
 		C0D8A3BC1F571A0200A204C7 /* AssignmentOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8A3C01F571A0200A204C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0D8A3C21F571A0200A204C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,7 +124,11 @@
 				C0D8A3C31F571A0200A204C7 /* AppDelegate.m */,
 				C0D8A3C51F571A0200A204C7 /* ViewController.h */,
 				C0D8A3C61F571A0200A204C7 /* ViewController.m */,
+				9BBDEDE41F5DF19A0053D5CF /* ImageModel.h */,
+				9BBDEDE51F5DF19A0053D5CF /* ImageModel.m */,
 				C0D8A3C81F571A0200A204C7 /* Main.storyboard */,
+				9B4E2D981F5F22CF008AEB01 /* CollectionViewCell.h */,
+				9B4E2D991F5F22CF008AEB01 /* CollectionViewCell.m */,
 				C0D8A4021F57254700A204C7 /* Settings.storyboard */,
 				C0D8A3FF1F57252F00A204C7 /* CollectionView.storyboard */,
 				C0D8A3FC1F57249F00A204C7 /* CollectionViewController.h */,
@@ -301,9 +311,11 @@
 			files = (
 				C0D8A3C71F571A0200A204C7 /* ViewController.m in Sources */,
 				C0D8A3C41F571A0200A204C7 /* AppDelegate.m in Sources */,
+				9BBDEDE61F5DF19A0053D5CF /* ImageModel.m in Sources */,
 				C0D8A3FE1F57249F00A204C7 /* CollectionViewController.m in Sources */,
 				C0D8A3C11F571A0200A204C7 /* main.m in Sources */,
 				C0D8A3FB1F57243800A204C7 /* TableViewController.m in Sources */,
+				9B4E2D9A1F5F22CF008AEB01 /* CollectionViewCell.m in Sources */,
 				C0D8A3F81F5723F300A204C7 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +562,7 @@
 				C0D8A3EB1F571A0200A204C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0D8A3EC1F571A0200A204C7 /* Build configuration list for PBXNativeTarget "AssignmentOneTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +571,7 @@
 				C0D8A3EE1F571A0200A204C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0D8A3EF1F571A0200A204C7 /* Build configuration list for PBXNativeTarget "AssignmentOneUITests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +580,7 @@
 				C0D8A3F11F571A0200A204C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
