@@ -8,6 +8,7 @@
 
 #import "CollectionViewController.h"
 #import "ImageModel.h"
+#import "ViewController.h"
 #import "CollectionViewCell.h"
 
 @interface CollectionViewController ()
@@ -77,6 +78,8 @@ static NSString * const reuseIdentifier = @"ImageCell";
     
     // Configure the cell
     cell.imageView.image = [self.myImageModel getImageAt:indexPath.row];
+    cell.imageView.clipsToBounds = YES;
+
     
     return cell;
 }
@@ -87,6 +90,21 @@ static NSString * const reuseIdentifier = @"ImageCell";
     
 
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    BOOL isVC = [[segue destinationViewController] isKindOfClass:[ViewController class]];
+    
+    if(isVC){
+        UICollectionViewCell* cell = (UICollectionViewCell*)sender;
+        ViewController *vc = [segue destinationViewController];
+        
+        //vc.imageName = cell.textLabel.text;
+        vc.index = [self.collectionView indexPathForCell:cell].row;
+    }
+    
+}
+
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

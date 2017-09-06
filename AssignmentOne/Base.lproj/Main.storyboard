@@ -22,9 +22,12 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4gR-RV-lsB" id="YjM-kv-jUY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bIk-tU-MDS" kind="presentation" id="eA1-Kp-QRD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -53,7 +56,7 @@
         <scene sceneID="Dcb-yA-HO9">
             <objects>
                 <navigationController id="iZP-yO-pvI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5iE-CJ-OzB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5iE-CJ-OzB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -79,7 +82,60 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="WVt-9f-EEV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5R-0S-YBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="281"/>
+            <point key="canvasLocation" x="1174" y="424"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3AJ-rj-9z5">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bIk-tU-MDS" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0eA-TW-ajo"/>
+                        <viewControllerLayoutGuide type="bottom" id="iZj-IL-et6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mWv-yO-ZXs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIV-x8-H2t">
+                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxk-Tg-Cbs">
+                                <rect key="frame" x="0.0" y="18" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Sju-wa-BGB"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Modal Image" id="w5y-IE-zsg">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="xJa-vs-HhB">
+                                            <connections>
+                                                <segue destination="uVk-Tq-3Z5" kind="custom" customClass="MyPopSegue" id="3g7-Oe-euK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iZj-IL-et6" firstAttribute="top" secondItem="iIV-x8-H2t" secondAttribute="bottom" id="0kU-Yu-3AI"/>
+                            <constraint firstItem="Xxk-Tg-Cbs" firstAttribute="top" secondItem="mWv-yO-ZXs" secondAttribute="top" constant="18" id="NkB-qd-meC"/>
+                            <constraint firstItem="iIV-x8-H2t" firstAttribute="leading" secondItem="mWv-yO-ZXs" secondAttribute="leading" id="PH8-KS-koy"/>
+                            <constraint firstItem="Xxk-Tg-Cbs" firstAttribute="trailing" secondItem="iIV-x8-H2t" secondAttribute="trailing" id="WbF-ZK-VvK"/>
+                            <constraint firstAttribute="trailing" secondItem="iIV-x8-H2t" secondAttribute="trailing" id="acN-jf-ge1"/>
+                            <constraint firstItem="Xxk-Tg-Cbs" firstAttribute="bottom" secondItem="iIV-x8-H2t" secondAttribute="top" id="gS6-rZ-f5N"/>
+                            <constraint firstItem="Xxk-Tg-Cbs" firstAttribute="leading" secondItem="mWv-yO-ZXs" secondAttribute="leading" id="lhV-lx-iv4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="iIV-x8-H2t" id="Qxm-Bt-6HZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNR-Rf-U39" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864.8" y="280.20989505247377"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3g7-Oe-euK"/>
+    </inferredMetricsTieBreakers>
 </document>

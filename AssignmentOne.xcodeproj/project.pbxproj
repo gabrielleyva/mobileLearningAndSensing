@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B4E2D9A1F5F22CF008AEB01 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E2D991F5F22CF008AEB01 /* CollectionViewCell.m */; };
+		9B4E2D9D1F5F5EE7008AEB01 /* MyPopSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E2D9C1F5F5EE7008AEB01 /* MyPopSegue.m */; };
 		9BBDEDE61F5DF19A0053D5CF /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDEDE51F5DF19A0053D5CF /* ImageModel.m */; };
 		C0D8A3C11F571A0200A204C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C01F571A0200A204C7 /* main.m */; };
 		C0D8A3C41F571A0200A204C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D8A3C31F571A0200A204C7 /* AppDelegate.m */; };
@@ -44,6 +45,8 @@
 /* Begin PBXFileReference section */
 		9B4E2D981F5F22CF008AEB01 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		9B4E2D991F5F22CF008AEB01 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		9B4E2D9B1F5F5EE7008AEB01 /* MyPopSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPopSegue.h; sourceTree = "<group>"; };
+		9B4E2D9C1F5F5EE7008AEB01 /* MyPopSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPopSegue.m; sourceTree = "<group>"; };
 		9BBDEDE41F5DF19A0053D5CF /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
 		9BBDEDE51F5DF19A0053D5CF /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
 		C0D8A3BC1F571A0200A204C7 /* AssignmentOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +130,8 @@
 				9BBDEDE41F5DF19A0053D5CF /* ImageModel.h */,
 				9BBDEDE51F5DF19A0053D5CF /* ImageModel.m */,
 				C0D8A3C81F571A0200A204C7 /* Main.storyboard */,
+				9B4E2D9B1F5F5EE7008AEB01 /* MyPopSegue.h */,
+				9B4E2D9C1F5F5EE7008AEB01 /* MyPopSegue.m */,
 				9B4E2D981F5F22CF008AEB01 /* CollectionViewCell.h */,
 				9B4E2D991F5F22CF008AEB01 /* CollectionViewCell.m */,
 				C0D8A4021F57254700A204C7 /* Settings.storyboard */,
@@ -317,6 +322,7 @@
 				C0D8A3FB1F57243800A204C7 /* TableViewController.m in Sources */,
 				9B4E2D9A1F5F22CF008AEB01 /* CollectionViewCell.m in Sources */,
 				C0D8A3F81F5723F300A204C7 /* SettingsViewController.m in Sources */,
+				9B4E2D9D1F5F5EE7008AEB01 /* MyPopSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

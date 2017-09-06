@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "ImageModel.h"
+#import "ViewController.h"
 
 @interface TableViewController ()
 
@@ -70,6 +71,20 @@
     
     
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    BOOL isVC = [[segue destinationViewController] isKindOfClass:[ViewController class]];
+    
+    if(isVC){
+        UITableViewCell* cell = (UITableViewCell*)sender;
+        ViewController *vc = [segue destinationViewController];
+        
+        //vc.imageName = cell.textLabel.text;
+        vc.index = [self.tableView indexPathForCell:cell].row;
+    }
+    
 }
 
 

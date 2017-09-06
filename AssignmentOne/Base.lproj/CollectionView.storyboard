@@ -13,7 +13,7 @@
         <scene sceneID="8hX-1V-iDn">
             <objects>
                 <collectionViewController id="laH-vO-uI9" customClass="CollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="e7w-1X-D62">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="e7w-1X-D62">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="foI-wT-fIB">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="foI-wT-fIB">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <gestureRecognizers/>
                                         </imageView>
@@ -47,6 +47,7 @@
                                 <connections>
                                     <outlet property="ImageView" destination="foI-wT-fIB" id="b8W-aU-GyZ"/>
                                     <outlet property="imageView" destination="foI-wT-fIB" id="eNe-vq-e80"/>
+                                    <segue destination="vH2-Ac-cfe" kind="presentation" id="U1k-5L-rwK"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -60,6 +61,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvO-b4-XRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="1039.4302848575712"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="egx-gm-jYc">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vH2-Ac-cfe" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E0g-G7-1lc"/>
+                        <viewControllerLayoutGuide type="bottom" id="lQz-e9-4mu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="COx-ke-ErL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVE-Np-kxs">
+                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0w7-eB-s9B">
+                                <rect key="frame" x="0.0" y="18" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yY6-nN-r9t"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Modal Image" id="1OD-CZ-WjY">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="nWz-hD-twb">
+                                            <connections>
+                                                <segue destination="laH-vO-uI9" kind="custom" customClass="MyPopSegue" id="fQR-zI-WiW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0w7-eB-s9B" firstAttribute="bottom" secondItem="ZVE-Np-kxs" secondAttribute="top" id="8Ik-tR-QrR"/>
+                            <constraint firstItem="lQz-e9-4mu" firstAttribute="top" secondItem="ZVE-Np-kxs" secondAttribute="bottom" id="Sdv-9y-Ras"/>
+                            <constraint firstItem="0w7-eB-s9B" firstAttribute="leading" secondItem="COx-ke-ErL" secondAttribute="leading" id="WMR-8z-DiC"/>
+                            <constraint firstItem="0w7-eB-s9B" firstAttribute="top" secondItem="COx-ke-ErL" secondAttribute="top" constant="18" id="Wuy-Y4-7Sc"/>
+                            <constraint firstItem="0w7-eB-s9B" firstAttribute="trailing" secondItem="ZVE-Np-kxs" secondAttribute="trailing" id="ZAw-mY-7dU"/>
+                            <constraint firstAttribute="trailing" secondItem="ZVE-Np-kxs" secondAttribute="trailing" id="ZmX-sx-BWN"/>
+                            <constraint firstItem="ZVE-Np-kxs" firstAttribute="leading" secondItem="COx-ke-ErL" secondAttribute="leading" id="jRa-9w-yGs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="ZVE-Np-kxs" id="gx3-nH-zj3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRl-MP-Rto" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="1039"/>
         </scene>
     </scenes>
 </document>
