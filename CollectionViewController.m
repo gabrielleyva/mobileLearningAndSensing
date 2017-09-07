@@ -87,7 +87,12 @@ static NSString * const reuseIdentifier = @"ImageCell";
 #pragma mark <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ModalView"];
+    vc.index = indexPath.row;
+    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:vc animated:YES completion:nil];
 
 }
 

@@ -25,9 +25,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="bIk-tU-MDS" kind="presentation" id="eA1-Kp-QRD"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -87,7 +84,7 @@
         <!--View Controller-->
         <scene sceneID="3AJ-rj-9z5">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bIk-tU-MDS" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModalView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bIk-tU-MDS" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0eA-TW-ajo"/>
                         <viewControllerLayoutGuide type="bottom" id="iZj-IL-et6"/>
@@ -108,7 +105,7 @@
                                     <navigationItem title="Modal Image" id="w5y-IE-zsg">
                                         <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="xJa-vs-HhB">
                                             <connections>
-                                                <segue destination="uVk-Tq-3Z5" kind="custom" customClass="MyPopSegue" id="3g7-Oe-euK"/>
+                                                <action selector="doneBtnPressed:" destination="bIk-tU-MDS" id="vYQ-Ch-T3C"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -135,7 +132,4 @@
             <point key="canvasLocation" x="1864.8" y="280.20989505247377"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="3g7-Oe-euK"/>
-    </inferredMetricsTieBreakers>
 </document>

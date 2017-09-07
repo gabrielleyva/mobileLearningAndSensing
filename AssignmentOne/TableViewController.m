@@ -28,6 +28,20 @@
     return _myImageModel;
 }
 
+- ( NSURLSession * )getURLSession
+{
+    static NSURLSession *session = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once( &onceToken,
+                  ^{
+                      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+                      session = [NSURLSession sessionWithConfiguration:configuration];
+                  } );
+    
+    return session;
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,19 +87,16 @@
     return cell;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    BOOL isVC = [[segue destinationViewController] isKindOfClass:[ViewController class]];
-    
-    if(isVC){
-        UITableViewCell* cell = (UITableViewCell*)sender;
-        ViewController *vc = [segue destinationViewController];
-        
-        //vc.imageName = cell.textLabel.text;
-        vc.index = [self.tableView indexPathForCell:cell].row;
-    }
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ModalView"];
+    vc.index = indexPath.row;
+    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:vc animated:YES completion:nil];
+
 }
+
 
 
 

@@ -24,6 +24,9 @@
     
     return _myImageModel;
 }
+- (IBAction)doneBtnPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 -(NSString*)imageName{
     
