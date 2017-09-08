@@ -45,6 +45,7 @@
             if ([controller isKindOfClass:[TableViewController class]]) {
                 TableViewController *vc = (TableViewController *)controller;
                 vc.settingModel = self.settingModel;
+                vc.timer = self.timer;
                 [vc.tableView reloadData];
  
                 break;
@@ -212,19 +213,4 @@
     self.timerTextField.inputView = self.pickerView;
     return YES;
 }
-
-//#pragma mark - Navigation
-// 
-//
-//// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    NSLog(@"Called");
-//    if ([[segue identifier] isEqualToString:@"settings"]) {
-//        TableViewController *vc = [segue destinationViewController];
-//        vc.settingModel  = self.settingModel;
-//        NSLog(@"New Number: %i", vc.settingModel.numberOfImages);
-//        [vc.tableView reloadData];
-//    }
-//}
-
 @end

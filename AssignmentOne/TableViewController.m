@@ -128,7 +128,7 @@
 }
 
 -(void)countDown {
-    self.tableLabel.text = [NSString stringWithFormat:@"%i",self.settingModel.counts];
+    self.tableLabel.text = [NSString stringWithFormat:@"Timer Count Down: %i sec",self.settingModel.counts];
     NSLog(@"Inside Tableview controller %i",self.settingModel.counts);
     if (--self.settingModel.counts == 0) {
         [self.randomOrder removeAllObjects];
