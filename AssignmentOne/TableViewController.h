@@ -14,5 +14,6 @@
 @interface TableViewController : UITableViewController
 @property(weak, nonatomic) NSTimer * timer;
 @property (strong, nonatomic) SettingsViewModel *settingModel;
-
+@property (weak, nonatomic) IBOutlet UILabel *tableLabel;
+-(void)countDown;
 @end

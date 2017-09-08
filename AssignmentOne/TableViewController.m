@@ -109,6 +109,7 @@
         SettingsViewController *vc = [segue destinationViewController];
         vc.settingModel  = self.settingModel;
         vc.timer = self.timer;
+        vc.tvc = self;
     }
     if ([[segue identifier] isEqualToString:@"CollectionView"]) {
         CollectionViewController *vc = [segue destinationViewController];
@@ -127,7 +128,8 @@
 }
 
 -(void)countDown {
-
+    self.tableLabel.text = [NSString stringWithFormat:@"%i",self.settingModel.counts];
+    NSLog(@"Inside Tableview controller %i",self.settingModel.counts);
     if (--self.settingModel.counts == 0) {
         [self.randomOrder removeAllObjects];
         [self.tableView  reloadData];

@@ -152,19 +152,19 @@
 
 - (void)prepareTimer{
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                  target:self
+                                                  target:self.tvc
                                                 selector:@selector(countDown)
                                                 userInfo:nil
                                                  repeats:YES];
 }
 
--(void)countDown {
-    NSLog(@"%i", self.settingModel.counts);
-    if (--self.settingModel.counts == 0) {
-        self.settingModel.counts = [self.settingModel calculateTimerTime];
-        
-    }
-}
+//-(void)countDown {
+//    NSLog(@"%i", self.settingModel.counts);
+//    if (--self.settingModel.counts == 0) {
+//        self.settingModel.counts = [self.settingModel calculateTimerTime];
+//        
+//    }
+//}
 
 
 

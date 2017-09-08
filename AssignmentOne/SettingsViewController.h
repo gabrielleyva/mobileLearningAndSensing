@@ -13,4 +13,5 @@
 @interface SettingsViewController : UIViewController
 @property(weak, nonatomic) NSTimer * timer;
 @property (strong, nonatomic) SettingsViewModel *settingModel;
+@property (strong,nonatomic) ViewController *tvc;
 @end
