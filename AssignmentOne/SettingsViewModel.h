@@ -11,10 +11,13 @@
 
 @interface SettingsViewModel : NSObject
 
-@property (strong, nonatomic) NSArray* hours;
-@property (strong, nonatomic) NSArray* minutes;
-@property (strong, nonatomic) UIColor* themeColor;
-@property (strong, nonatomic) NSNumber* numberOfImages;
+@property (strong, nonatomic) NSArray* timeArray;
+@property (nonatomic) double themeColorValue;
+@property (nonatomic) int numberOfImages;
+@property (nonatomic) BOOL timerStatus;
+@property (nonatomic) int hour;
+@property (nonatomic) int minute;
+@property (nonatomic) NSInteger typeOfImage; //0 = Cars -> 1 = Space -> 2 = Music
 +(SettingsViewModel*) sharedInstance;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SettingsViewModel.h"
 
 @interface SettingsViewController : ViewController
-
+@property (strong, nonatomic) SettingsViewModel *settingModel;
 @end
