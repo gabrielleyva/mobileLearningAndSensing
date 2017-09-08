@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="laH-vO-uI9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,24 +13,41 @@
         <scene sceneID="8hX-1V-iDn">
             <objects>
                 <collectionViewController id="laH-vO-uI9" customClass="CollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="e7w-1X-D62">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="e7w-1X-D62">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ieI-Ze-zpA">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ieI-Ze-zpA">
+                            <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YXI-r6-GEw">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="YXI-r6-GEw" customClass="CollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="foI-wT-fIB">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <gestureRecognizers/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="foI-wT-fIB" firstAttribute="top" secondItem="YXI-r6-GEw" secondAttribute="top" id="fW0-ol-Wk0"/>
+                                    <constraint firstAttribute="trailing" secondItem="foI-wT-fIB" secondAttribute="trailing" id="iTM-rf-UDU"/>
+                                    <constraint firstItem="foI-wT-fIB" firstAttribute="leading" secondItem="YXI-r6-GEw" secondAttribute="leading" id="uaa-I2-32O"/>
+                                    <constraint firstAttribute="bottom" secondItem="foI-wT-fIB" secondAttribute="bottom" id="y6J-Pq-OFw"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="ImageView" destination="foI-wT-fIB" id="b8W-aU-GyZ"/>
+                                    <outlet property="imageView" destination="foI-wT-fIB" id="eNe-vq-e80"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -35,11 +56,10 @@
                         </connections>
                     </collectionView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvO-b4-XRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="1040"/>
+            <point key="canvasLocation" x="581.60000000000002" y="1039.4302848575712"/>
         </scene>
     </scenes>
 </document>
