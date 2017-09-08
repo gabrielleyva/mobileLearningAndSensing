@@ -12,6 +12,7 @@
 #import "CollectionViewController.h"
 
 @interface TableViewController : UITableViewController
+@property(weak, nonatomic) NSTimer * timer;
 @property (strong, nonatomic) SettingsViewModel *settingModel;
 
 @end

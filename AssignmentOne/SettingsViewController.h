@@ -11,5 +11,6 @@
 #import "TableViewController.h"
 
 @interface SettingsViewController : UIViewController
+@property(weak, nonatomic) NSTimer * timer;
 @property (strong, nonatomic) SettingsViewModel *settingModel;
 @end

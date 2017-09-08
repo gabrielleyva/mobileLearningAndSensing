@@ -17,6 +17,8 @@
 @property (nonatomic) BOOL timerStatus;
 @property (nonatomic) int hour;
 @property (nonatomic) int minute;
+@property (nonatomic) int second;
+@property (nonatomic) int counts;
 @property (nonatomic) NSInteger typeOfImage;
 +(SettingsViewModel*) sharedInstance;
 

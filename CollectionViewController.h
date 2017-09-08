@@ -11,4 +11,5 @@
 
 @interface CollectionViewController : UICollectionViewController <UICollectionViewDelegate>
 @property (strong, nonatomic) SettingsViewModel *settingModel;
+@property(strong,nonatomic) NSMutableArray *randomOrder;
 @end

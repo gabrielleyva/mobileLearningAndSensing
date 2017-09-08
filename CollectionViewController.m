@@ -17,6 +17,7 @@
 
 @property (nonatomic) NSInteger indexCell;
 
+
 @end
 
 @implementation CollectionViewController
@@ -42,10 +43,6 @@ static NSString * const reuseIdentifier = @"ImageCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
     // Register cell classes
     //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -83,9 +80,9 @@ static NSString * const reuseIdentifier = @"ImageCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    
-    cell.imageView.image = [self.myImageModel getImageAt:indexPath.row ofKind:self.settingModel.typeOfImage];
+    cell.imageView.image = [self.myImageModel getImageAt:[[self.randomOrder objectAtIndex:indexPath.row] integerValue] ofKind:self.settingModel.typeOfImage];
     cell.imageView.clipsToBounds = YES;
+  
 
     
     return cell;
@@ -113,7 +110,8 @@ static NSString * const reuseIdentifier = @"ImageCell";
         ViewController *vc = [segue destinationViewController];
         
         //vc.imageName = cell.textLabel.text;
-        vc.index = [self.collectionView indexPathForCell:cell].row;
+        //vc.index = [self.collectionView indexPathForCell:cell].row;
+        vc.index = [[self.randomOrder objectAtIndex:[self.collectionView indexPathForCell:cell].row] integerValue];
     }
     
 }

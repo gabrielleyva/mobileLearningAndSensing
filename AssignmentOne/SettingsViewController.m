@@ -41,21 +41,16 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    NSLog(@"called1");
-//    if (self.isMovingToParentViewController) {
-        NSLog(@"called2");
         for (UIViewController *controller in self.navigationController.viewControllers) {
-            NSLog(@"called3");
             if ([controller isKindOfClass:[TableViewController class]]) {
                 TableViewController *vc = (TableViewController *)controller;
                 vc.settingModel = self.settingModel;
-                NSLog(@"Setting Model: %i", vc.settingModel.numberOfImages);
                 [vc.tableView reloadData];
-                
+ 
                 break;
             }
         }
-    //}
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,13 +71,13 @@
 }
 
 - (void)prepareTimerSwitch{
+    
     [self.timerSwitch setOn:self.settingModel.timerStatus];
 }
 
 - (void)prepareTimerTextField{
     self.timerTextField.delegate = self;
-    self.timerTextField.placeholder = [NSString stringWithFormat:@"Set Timer -- Defuault Values: Hours: %i, Minutes: %i", self.settingModel.hour, self.settingModel.minute];
-}
+    self.timerTextField.placeholder = [NSString stringWithFormat:@"Hours: %i, Minutes: %i, Seconds: %i", self.settingModel.hour, self.settingModel.minute, self.settingModel.second];}
 
 - (void)prepareSlider{
     [self.slider setValue: self.settingModel.themeColorValue];
@@ -118,13 +113,16 @@
 - (IBAction)switchUsed:(UISwitch *)sender {
     if (sender.isOn) {
         self.timerOnOffLabel.text = @"Timer: On";
-        self.timerTextField.placeholder = [NSString stringWithFormat:@"Set Timer -- Defuault Values: Hours: %i, Minutes: %i", self.settingModel.hour, self.settingModel.minute];
+        self.timerTextField.placeholder = [NSString stringWithFormat:@"Hours: %i, Minutes: %i, Seconds: %i", self.settingModel.hour, self.settingModel.minute, self.settingModel.second];
         self.settingModel.timerStatus = YES;
         [self.timerTextField setUserInteractionEnabled:YES];
         
         self.settingModel.hour = 0;
-        self.settingModel.minute = 1;
+        self.settingModel.minute = 0;
+        self.settingModel.second = 10;
+        
     } else {
+        
         self.timerOnOffLabel.text = @"Timer: Off";
         self.timerTextField.placeholder = @"Timer is off. Turn on the timer to set timer time";
         self.settingModel.timerStatus = NO;
@@ -132,6 +130,8 @@
         
         self.settingModel.hour = 0;
         self.settingModel.minute = 0;
+        self.settingModel.second = 0;
+        [self.timer invalidate];
     }
 }
 
@@ -142,7 +142,7 @@
 #pragma mark - PcikerView
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
-    return 2;
+    return 3;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
@@ -162,14 +162,16 @@
     
     NSString *tempHour = [NSString stringWithFormat:@"%@", [self.settingModel.timeArray[0] objectAtIndex:[self.pickerView selectedRowInComponent:0]]];
     NSString *tempMinute = [NSString stringWithFormat:@"%@", [self.settingModel.timeArray[1] objectAtIndex:[self.pickerView selectedRowInComponent:1]]];
+    NSString *tempSecond = [NSString stringWithFormat:@"%@", [self.settingModel.timeArray[2] objectAtIndex:[self.pickerView selectedRowInComponent:2]]];
     
     self.settingModel.hour = [tempHour integerValue];
     self.settingModel.minute = [tempMinute integerValue];
+    self.settingModel.second = [tempSecond integerValue];
 }
 
 #pragma marke - TextField 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    self.timerTextField.text = [NSString stringWithFormat:@"Hours: %i, Minutes: %i", self.settingModel.hour, self.settingModel.minute];
+    self.timerTextField.text = [NSString stringWithFormat:@"Hours: %i, Minutes: %i, Seconds: %i", self.settingModel.hour, self.settingModel.minute, self.settingModel.second];
     
     self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectZero];
     self.pickerView.delegate = self;

@@ -13,9 +13,9 @@
 @interface TableViewController ()
 
 @property (strong,nonatomic) ImageModel* myImageModel;
-
 @property (nonatomic) NSInteger indexCell;
-
+@property(nonatomic) int counts;
+@property(strong,nonatomic) NSMutableArray *randomOrder;
 @end
 
 @implementation TableViewController
@@ -27,7 +27,6 @@
     
     return _myImageModel;
 }
-
 
 -(SettingsViewModel*)settingModel{
     
@@ -42,6 +41,12 @@
     UIColor *themeColor = [UIColor colorWithHue:self.settingModel.themeColorValue saturation:1.f brightness:1.f alpha:1.f];
     self.navigationController.navigationBar.barTintColor = themeColor;
     
+    if (self.settingModel.timerStatus == true){
+    [self prepareTimer];
+    }
+    
+    self.randomOrder = [[NSMutableArray alloc] init];
+    [self.randomOrder removeAllObjects];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -73,10 +78,12 @@
     UITableViewCell *cell = nil;
     
     if(indexPath.section==0){
+        int randomNumber = arc4random_uniform(20);
         cell = [tableView dequeueReusableCellWithIdentifier:@"ImageNameCell" forIndexPath:indexPath];
         // TODO: check settings for kind
-        cell.textLabel.text = [self.myImageModel getImageNameAt:indexPath.row ofKind:self.settingModel.typeOfImage];
+        cell.textLabel.text = [self.myImageModel getImageNameAt:randomNumber ofKind:self.settingModel.typeOfImage];
         cell.detailTextLabel.text = @">";
+        [self.randomOrder addObject:[NSNumber numberWithInt:randomNumber]];
     }
     
     
@@ -87,7 +94,8 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ModalView"];
-    vc.index = indexPath.row;
+    vc.index = [[self.randomOrder objectAtIndex:indexPath.row] integerValue];
+    NSLog(@"%@", self.randomOrder);
     vc.settingModel = self.settingModel;
     vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
@@ -100,12 +108,32 @@
     if ([[segue identifier] isEqualToString:@"settings"]) {
         SettingsViewController *vc = [segue destinationViewController];
         vc.settingModel  = self.settingModel;
+        vc.timer = self.timer;
     }
     if ([[segue identifier] isEqualToString:@"CollectionView"]) {
         CollectionViewController *vc = [segue destinationViewController];
         vc.settingModel  = self.settingModel;
+        vc.randomOrder = self.randomOrder;
     }
     
+}
+
+- (void)prepareTimer{
+    self.counts = self.settingModel.counts;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                             target:self
+                                           selector:@selector(countDown)
+                                           userInfo:nil
+                                            repeats:YES];
+}
+
+-(void)countDown {
+    NSLog(@"Counts: %i", self.counts);
+    if (--self.counts == 0) {
+        [self.randomOrder removeAllObjects];
+        [self.tableView  reloadData];
+        self.counts = self.settingModel.counts;
+    }
 }
 
 
