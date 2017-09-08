@@ -28,7 +28,7 @@
                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="M1t-yT-6vd"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="vxt-y8-bdL">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="vxt-y8-bdL">
                                 <rect key="frame" x="265" y="152" width="94" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="2He-G8-gen"/>
@@ -81,7 +81,7 @@
                                 <segments>
                                     <segment title="Cars"/>
                                     <segment title="Space"/>
-                                    <segment title="Music"/>
+                                    <segment title="Flowers"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentControlToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="XHN-ye-29E"/>

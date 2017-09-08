@@ -24,6 +24,15 @@
     
     return _myImageModel;
 }
+
+-(SettingsViewModel*)settingModel{
+    
+    if(!_settingModel)
+        _settingModel =[SettingsViewModel sharedInstance];
+    
+    return _settingModel;
+}
+
 - (IBAction)doneBtnPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -39,7 +48,7 @@
 -(UIImageView*)imageView{
     //TODO: check kind of image selected
     if(!_imageView)
-        _imageView = [[UIImageView alloc] initWithImage:[[ImageModel sharedInstance] getImageAt:self.index ofKind:@"car"]];
+        _imageView = [[UIImageView alloc] initWithImage:[[ImageModel sharedInstance] getImageAt:self.index ofKind:self.settingModel.typeOfImage]];
     return _imageView;
 }
 

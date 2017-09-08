@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewModel.h"
+#import "SettingsViewController.h"
 
 @interface TableViewController : UITableViewController
+@property (strong, nonatomic) SettingsViewModel *settingModel;
 
 @end

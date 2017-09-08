@@ -29,10 +29,17 @@
 }
 
 
-
+-(SettingsViewModel*)settingModel{
+    
+    if(!_settingModel)
+        _settingModel =[SettingsViewModel sharedInstance];
+    
+    return _settingModel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"Number Of Images, %i", self.settingModel.numberOfImages);
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -56,7 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // TODO: Check for number of images to load in settings
-    return [self.myImageModel getImageCount];
+    return self.settingModel.numberOfImages;
 }
 
 
@@ -67,7 +74,7 @@
     if(indexPath.section==0){
         cell = [tableView dequeueReusableCellWithIdentifier:@"ImageNameCell" forIndexPath:indexPath];
         // TODO: check settings for kind
-        cell.textLabel.text = [self.myImageModel getImageNameAt:indexPath.row ofKind:@"car"];
+        cell.textLabel.text = [self.myImageModel getImageNameAt:indexPath.row ofKind:self.settingModel.typeOfImage];
         cell.detailTextLabel.text = @">";
     }
     
@@ -76,9 +83,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ModalView"];
     vc.index = indexPath.row;
+    vc.settingModel = self.settingModel;
     vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:vc animated:YES completion:nil];
@@ -86,7 +95,12 @@
 }
 
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"settings"]) {
+        SettingsViewController *vc = [segue destinationViewController];
+        vc.settingModel  = self.settingModel;
+    }
+}
 
 
 @end

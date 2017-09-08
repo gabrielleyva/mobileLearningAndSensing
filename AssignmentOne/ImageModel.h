@@ -15,9 +15,9 @@
 
 -(UIImage*)getImageWithName:(NSString*)name;
 
--(UIImage*)getImageAt:(NSInteger) index ofKind:(NSString *) kind;
+-(UIImage*)getImageAt:(NSInteger) index ofKind:(NSInteger) kind;
 
--(NSString*)getImageNameAt:(NSInteger) index ofKind:(NSString *) kind;
+-(NSString*)getImageNameAt:(NSInteger) index ofKind:(NSInteger) kind;
 
 -(NSUInteger)getImageCount;
 

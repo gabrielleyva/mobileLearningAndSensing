@@ -39,6 +39,25 @@
     [super viewWillAppear:true];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"called1");
+//    if (self.isMovingToParentViewController) {
+        NSLog(@"called2");
+        for (UIViewController *controller in self.navigationController.viewControllers) {
+            NSLog(@"called3");
+            if ([controller isKindOfClass:[TableViewController class]]) {
+                TableViewController *vc = (TableViewController *)controller;
+                vc.settingModel = self.settingModel;
+                NSLog(@"Setting Model: %i", vc.settingModel.numberOfImages);
+                [vc.tableView reloadData];
+                
+                break;
+            }
+        }
+    //}
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -87,6 +106,7 @@
     int value = [sender value];
     NSString * fullString = [NSString stringWithFormat:@"Number of Images: %i", value];
     self.numberOfPicsLabel.text = fullString;
+    self.settingModel.numberOfImages = value; 
 }
 - (IBAction)segmentControlToggled:(id)sender {
     self.settingModel.typeOfImage = self.segmentControl.selectedSegmentIndex;
@@ -154,14 +174,19 @@
     self.timerTextField.inputView = self.pickerView;
     return YES;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//#pragma mark - Navigation
+// 
+//
+//// In a storyboard-based application, you will often want to do a little preparation before navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    NSLog(@"Called");
+//    if ([[segue identifier] isEqualToString:@"settings"]) {
+//        TableViewController *vc = [segue destinationViewController];
+//        vc.settingModel  = self.settingModel;
+//        NSLog(@"New Number: %i", vc.settingModel.numberOfImages);
+//        [vc.tableView reloadData];
+//    }
+//}
 
 @end

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4gR-RV-lsB" id="YjM-kv-jUY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -41,7 +41,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="9sJ-rc-Ovh">
                             <connections>
-                                <segue destination="WVt-9f-EEV" kind="show" id="R9Z-Qt-Ge0"/>
+                                <segue destination="WVt-9f-EEV" kind="show" identifier="settings" id="R9Z-Qt-Ge0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

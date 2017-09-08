@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "SettingsViewModel.h"
+#import "TableViewController.h"
 
-@interface SettingsViewController : ViewController
+@interface SettingsViewController : UIViewController
 @property (strong, nonatomic) SettingsViewModel *settingModel;
 @end

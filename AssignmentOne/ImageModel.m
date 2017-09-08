@@ -84,21 +84,21 @@
     return image;
 }
 
--(UIImage*)getImageAt:(NSInteger) index ofKind:(NSString *) kind{
-    if ([kind  isEqualToString:@"car"]){
+-(UIImage*)getImageAt:(NSInteger) index ofKind:(NSInteger) kind{
+    if (kind == 0){
         return [UIImage imageNamed:self.carNames[index]];
-    } else if ([kind isEqualToString:@"space"]) {
+    } else if (kind == 1) {
         return [UIImage imageNamed:self.spaceNames[index]];
     } else {
         return [UIImage imageNamed:self.flowerNames[index]];
     }
 }
 
--(NSString*)getImageNameAt:(NSInteger) index ofKind: (NSString *) kind {
+-(NSString*)getImageNameAt:(NSInteger) index ofKind: (NSInteger) kind {
     
-    if ([kind  isEqualToString:@"car"]){
+    if (kind == 0){
         return [NSString stringWithFormat:@"Car-%@",self.carNames[index]];
-    } else if ([kind isEqualToString:@"space"]) {
+    } else if (kind == 1) {
         return [NSString stringWithFormat:@"Space-%@",self.spaceNames[index]];
     } else {
         return [NSString stringWithFormat:@"Flower-%@",self.flowerNames[index]];

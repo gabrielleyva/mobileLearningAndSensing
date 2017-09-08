@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewModel.h"
 
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) NSString *imageName;
 @property (nonatomic) NSInteger index;
+@property (strong, nonatomic) SettingsViewModel *settingModel;
 
 @end
 
