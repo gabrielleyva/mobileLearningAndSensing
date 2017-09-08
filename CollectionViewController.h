@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewModel.h"
 
 @interface CollectionViewController : UICollectionViewController <UICollectionViewDelegate>
-
+@property (strong, nonatomic) SettingsViewModel *settingModel;
 @end

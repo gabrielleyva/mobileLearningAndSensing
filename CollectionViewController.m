@@ -31,6 +31,13 @@ static NSString * const reuseIdentifier = @"ImageCell";
     return _myImageModel;
 }
 
+-(SettingsViewModel*)settingModel{
+    
+    if(!_settingModel)
+        _settingModel =[SettingsViewModel sharedInstance];
+    
+    return _settingModel;
+}
 
 
 - (void)viewDidLoad {
@@ -69,17 +76,15 @@ static NSString * const reuseIdentifier = @"ImageCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    //TODO: check for image count
     
-    return [self.myImageModel getImageCount];
+    return self.settingModel.numberOfImages;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    //TODO: check for kind in settings
     
-    cell.imageView.image = [self.myImageModel getImageAt:indexPath.row ofKind:@"car"];
+    cell.imageView.image = [self.myImageModel getImageAt:indexPath.row ofKind:self.settingModel.typeOfImage];
     cell.imageView.clipsToBounds = YES;
 
     
@@ -92,6 +97,7 @@ static NSString * const reuseIdentifier = @"ImageCell";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ModalView"];
     vc.index = indexPath.row;
+    vc.settingModel = self.settingModel;
     vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:vc animated:YES completion:nil];

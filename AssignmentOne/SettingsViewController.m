@@ -86,9 +86,10 @@
 
 - (void)prepareSlider{
     [self.slider setValue: self.settingModel.themeColorValue];
-    
+   
     UIColor *themeColor = [UIColor colorWithHue:self.slider.value saturation:1.f brightness:1.f alpha:1.f];
     self.colorLabel.textColor = themeColor;
+     self.navigationController.navigationBar.barTintColor = themeColor;
 }
 
 - (void)prepareStepper{
@@ -100,6 +101,8 @@
     
     UIColor *themeColor = [UIColor colorWithHue:self.slider.value saturation:1.f brightness:1.f alpha:1.f];
     self.colorLabel.textColor = themeColor;
+    self.settingModel.themeColorValue = self.slider.value;
+    self.navigationController.navigationBar.barTintColor = themeColor;
 }
 
 - (IBAction)stepperUsed:(UIStepper *)sender {

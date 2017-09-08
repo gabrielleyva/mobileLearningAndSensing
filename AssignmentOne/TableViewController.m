@@ -39,7 +39,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Number Of Images, %i", self.settingModel.numberOfImages);
+    UIColor *themeColor = [UIColor colorWithHue:self.settingModel.themeColorValue saturation:1.f brightness:1.f alpha:1.f];
+    self.navigationController.navigationBar.barTintColor = themeColor;
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -100,6 +101,11 @@
         SettingsViewController *vc = [segue destinationViewController];
         vc.settingModel  = self.settingModel;
     }
+    if ([[segue identifier] isEqualToString:@"CollectionView"]) {
+        CollectionViewController *vc = [segue destinationViewController];
+        vc.settingModel  = self.settingModel;
+    }
+    
 }
 
 

@@ -36,7 +36,7 @@
                         <barButtonItem key="leftBarButtonItem" image="icons8-View Module Filled-50" id="KtR-Hl-0B3">
                             <inset key="imageInsets" minX="10" minY="9" maxX="10" maxY="10"/>
                             <connections>
-                                <segue destination="nr1-6L-bgY" kind="show" id="MYs-JB-2lA"/>
+                                <segue destination="nr1-6L-bgY" kind="show" identifier="CollectionView" id="MYs-JB-2lA"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="9sJ-rc-Ovh">
