@@ -28,18 +28,6 @@
     return _myImageModel;
 }
 
-- ( NSURLSession * )getURLSession
-{
-    static NSURLSession *session = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once( &onceToken,
-                  ^{
-                      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-                      session = [NSURLSession sessionWithConfiguration:configuration];
-                  } );
-    
-    return session;
-}
 
 
 
@@ -67,7 +55,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+    // TODO: Check for number of images to load in settings
     return [self.myImageModel getImageCount];
 }
 
@@ -78,8 +66,8 @@
     
     if(indexPath.section==0){
         cell = [tableView dequeueReusableCellWithIdentifier:@"ImageNameCell" forIndexPath:indexPath];
-        
-        cell.textLabel.text = [self.myImageModel getImageNameAt:indexPath.row];
+        // TODO: check settings for kind
+        cell.textLabel.text = [self.myImageModel getImageNameAt:indexPath.row ofKind:@"car"];
         cell.detailTextLabel.text = @">";
     }
     

@@ -11,7 +11,7 @@
 #import "ViewController.h"
 #import "CollectionViewCell.h"
 
-@interface CollectionViewController ()
+@interface CollectionViewController ()<UICollectionViewDelegateFlowLayout>
 
 @property (strong,nonatomic) ImageModel* myImageModel;
 
@@ -69,15 +69,17 @@ static NSString * const reuseIdentifier = @"ImageCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-
+    //TODO: check for image count
+    
     return [self.myImageModel getImageCount];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
-    cell.imageView.image = [self.myImageModel getImageAt:indexPath.row];
+    //TODO: check for kind in settings
+    
+    cell.imageView.image = [self.myImageModel getImageAt:indexPath.row ofKind:@"car"];
     cell.imageView.clipsToBounds = YES;
 
     
@@ -109,6 +111,27 @@ static NSString * const reuseIdentifier = @"ImageCell";
     }
     
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    float cellWidth = 0.0;
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation))
+    {
+        cellWidth = screenWidth / 3.0;
+    } else {
+        cellWidth = screenWidth / 5.0;
+    }
+    CGSize size = CGSizeMake(cellWidth, cellWidth);
+    
+    return size;
+}
+
+
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

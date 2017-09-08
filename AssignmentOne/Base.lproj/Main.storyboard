@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Random Image Loader-->
+        <!--Images-->
         <scene sceneID="y1c-Eg-Lh6">
             <objects>
                 <tableViewController id="uVk-Tq-3Z5" customClass="TableViewController" sceneMemberID="viewController">
@@ -32,8 +32,9 @@
                             <outlet property="delegate" destination="uVk-Tq-3Z5" id="ioh-WA-1hx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Random Image Loader" id="Xsa-dT-R4A">
-                        <barButtonItem key="leftBarButtonItem" title="CV" id="KtR-Hl-0B3">
+                    <navigationItem key="navigationItem" title="Images" id="Xsa-dT-R4A">
+                        <barButtonItem key="leftBarButtonItem" image="icons8-View Module Filled-50" id="KtR-Hl-0B3">
+                            <inset key="imageInsets" minX="10" minY="9" maxX="10" maxY="10"/>
                             <connections>
                                 <segue destination="nr1-6L-bgY" kind="show" id="MYs-JB-2lA"/>
                             </connections>
@@ -102,7 +103,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Sju-wa-BGB"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Modal Image" id="w5y-IE-zsg">
+                                    <navigationItem title="Image Display" id="w5y-IE-zsg">
                                         <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="xJa-vs-HhB">
                                             <connections>
                                                 <action selector="doneBtnPressed:" destination="bIk-tU-MDS" id="vYQ-Ch-T3C"/>
@@ -132,4 +133,7 @@
             <point key="canvasLocation" x="1864.8" y="280.20989505247377"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-View Module Filled-50" width="50" height="50"/>
+    </resources>
 </document>

@@ -31,15 +31,15 @@
 -(NSString*)imageName{
     
     if(!_imageName)
-        _imageName = @"Eric1";
+        _imageName = @"c1";
     
     return _imageName;
 }
 
 -(UIImageView*)imageView{
-    
+    //TODO: check kind of image selected
     if(!_imageView)
-        _imageView = [[UIImageView alloc] initWithImage:[[ImageModel sharedInstance] getImageAt:self.index]];
+        _imageView = [[UIImageView alloc] initWithImage:[[ImageModel sharedInstance] getImageAt:self.index ofKind:@"car"]];
     return _imageView;
 }
 
