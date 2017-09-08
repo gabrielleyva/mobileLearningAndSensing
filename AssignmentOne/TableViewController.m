@@ -40,13 +40,13 @@
     [super viewDidLoad];
     UIColor *themeColor = [UIColor colorWithHue:self.settingModel.themeColorValue saturation:1.f brightness:1.f alpha:1.f];
     self.navigationController.navigationBar.barTintColor = themeColor;
-    
-    if (self.settingModel.timerStatus == true){
-    [self prepareTimer];
-    }
-    
+        
     self.randomOrder = [[NSMutableArray alloc] init];
     [self.randomOrder removeAllObjects];
+    
+    if (self.settingModel.timerStatus == YES){
+        [self prepareTimer];
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -119,7 +119,6 @@
 }
 
 - (void)prepareTimer{
-    self.counts = self.settingModel.counts;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1
                                              target:self
                                            selector:@selector(countDown)
@@ -128,11 +127,11 @@
 }
 
 -(void)countDown {
-    NSLog(@"Counts: %i", self.counts);
-    if (--self.counts == 0) {
+
+    if (--self.settingModel.counts == 0) {
         [self.randomOrder removeAllObjects];
         [self.tableView  reloadData];
-        self.counts = self.settingModel.counts;
+        self.settingModel.counts = [self.settingModel calculateTimerTime];
     }
 }
 

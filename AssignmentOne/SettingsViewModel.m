@@ -38,14 +38,6 @@
     return _numberOfImages;
 }
 
--(BOOL)timerStatus{
-    
-    if(!_timerStatus)
-        _timerStatus = YES;
-    
-    return _timerStatus;
-}
-
 -(int)hour{
     
     if(!_hour)

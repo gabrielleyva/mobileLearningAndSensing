@@ -21,5 +21,6 @@
 @property (nonatomic) int counts;
 @property (nonatomic) NSInteger typeOfImage;
 +(SettingsViewModel*) sharedInstance;
+-(int)calculateTimerTime;
 
 @end
